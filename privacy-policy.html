@@ -24,7 +24,7 @@
       padding: 24px;
     }
     .card {
-      width: min(900px, 100%);
+      width: min(920px, 100%);
       margin: 0 auto;
       background: var(--card);
       border: 1px solid var(--line);
@@ -45,7 +45,7 @@
 <body>
   <main class="card">
     <h1>Privacy Policy for DUMA</h1>
-    <p>Effective date: April 11, 2026</p>
+    <p>Effective date: May 7, 2026</p>
     <p>DUMA ("the app", "we", "our", or "us") respects your privacy. This Privacy Policy explains what data may be collected, how it is used, and what choices you have when using DUMA.</p>
     <p>Privacy contact: <a href="mailto:lvisoiu300@gmail.com">lvisoiu300@gmail.com</a></p>
 
@@ -60,61 +60,83 @@
       <li>words found in each level</li>
       <li>preferred language</li>
       <li>number of free hints used on the current day</li>
+      <li>letter or bonus hint balance</li>
+      <li>remove-ads ownership status, if purchased</li>
     </ul>
-    <p>This data is stored locally using standard operating system storage mechanisms. We do not operate our own backend server for gameplay sync, and we do not upload this gameplay data to our own servers.</p>
+    <p>This data is stored locally using standard operating system storage mechanisms. We do not operate our own account system, cloud sync server, or gameplay backend, and we do not upload this gameplay data to our own servers.</p>
 
-    <h2>3. Advertising and third-party SDKs</h2>
-    <p>DUMA may display advertising through Google AdMob, including banner ads and rewarded ads. When ads are shown, Google and its partners may automatically collect certain technical or usage-related data, depending on your device configuration, Google account settings, and the advertising services available on your device.</p>
+    <h2>3. Advertising, consent, and Google AdMob</h2>
+    <p>DUMA may display advertising through Google AdMob, including banner ads, interstitial ads, and rewarded ads. The app uses Google's User Messaging Platform flow for ad consent and privacy choices where those options are available or required.</p>
+    <p>When ads are shown, or when the app checks whether ads may be shown, Google and its partners may automatically collect certain technical or usage-related data depending on your device configuration, Google account settings, consent choices, and the advertising services available on your device.</p>
     <p>This data may include, for example:</p>
     <ul>
-      <li>IP address</li>
+      <li>IP address or approximate location derived from it</li>
       <li>device identifiers or advertising identifiers</li>
+      <li>device, operating system, app, and network information</li>
       <li>diagnostic and performance information</li>
       <li>interactions with ads or with the app</li>
-      <li>approximate device and network information</li>
     </ul>
-    <p>This data may be used for serving ads, fraud prevention, invalid traffic detection, ad performance measurement, diagnostics, and service improvement.</p>
+    <p>This data may be used for serving ads, fraud prevention, invalid traffic detection, ad performance measurement, diagnostics, security, and service improvement.</p>
     <p>More information:</p>
     <ul>
       <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
-      <li><a href="https://developers.google.com/ad-manager/mobile-ads-sdk/android/privacy/play-data-disclosure">Google Mobile Ads SDK data disclosure</a></li>
+      <li><a href="https://developers.google.com/admob/android/privacy/play-data-disclosure">Google Mobile Ads SDK data disclosure</a></li>
     </ul>
 
-    <h2>4. Consent and privacy choices</h2>
-    <p>In some regions, the law may require user consent before certain types of advertising are shown or before certain advertising identifiers are used. If and when we display a consent flow in the app, your choices will be presented in-app as required by applicable law.</p>
+    <h2>4. Firebase Analytics, Crashlytics, and Remote Config</h2>
+    <p>DUMA uses Firebase services for aggregated analytics, app stability, and remote configuration:</p>
+    <ul>
+      <li>Firebase Analytics helps us understand how the app is used. The app may send events such as level started, level completed, hint used, shop opened, purchase attempt, purchase success, and language changed. These events may include technical or gameplay parameters such as level number, app language, word count, remaining hints, or purchased product ID. We do not set our own User ID and we do not send names, email addresses, or phone numbers to Firebase.</li>
+      <li>Firebase Crashlytics helps us identify crashes and non-fatal errors. Reports may include device information, app version, operating system, stack traces, technical logs, and context keys such as the current level, language, letter count, ads state, or remove-ads ownership state.</li>
+      <li>Firebase Remote Config lets us change certain configuration values without publishing an app update, such as interstitial ad frequency or hint rewards. Remote Config may use technical data such as country, language, time zone, platform version, OS version, Firebase app ID, package name, and SDK version.</li>
+    </ul>
+    <p>Firebase and Google Analytics may automatically collect certain technical data, such as app-instance ID, advertising ID, masked IP address or coarse location derived from it, app lifecycle events, in-app purchase information, Firebase identifiers, device information, and session information. This data is used for analytics, stability, diagnostics, fraud prevention, service maintenance, and app configuration.</p>
+    <p>More information:</p>
+    <ul>
+      <li><a href="https://firebase.google.com/support/privacy">Firebase privacy and security</a></li>
+      <li><a href="https://firebase.google.com/docs/android/play-data-disclosure">Firebase Android data disclosure</a></li>
+      <li><a href="https://support.google.com/analytics/answer/11582702">Google Analytics for Firebase data disclosure</a></li>
+    </ul>
 
-    <h2>5. Data we do not directly collect</h2>
-    <p>Except for data processed by the advertising providers described above, DUMA does not directly collect your full name, email address, phone number, postal address, precise location, contacts, photos, microphone input, camera data, passwords, or login credentials.</p>
+    <h2>5. Google Play Billing</h2>
+    <p>DUMA may use Google Play Billing for optional purchases, such as removing ads or buying letter packs. Payment processing is handled by Google Play. DUMA receives information needed to deliver the purchase, such as product ID, purchase status, and technical verification data. We do not directly collect your payment card details and we do not process payments ourselves.</p>
 
-    <h2>6. Purpose of processing</h2>
-    <p>We use local data only to operate the game, preserve progress, and manage free hints. If ads are enabled, data processed by advertising providers is handled under their own policies for advertising, security, fraud prevention, and measurement purposes.</p>
+    <h2>6. Data we do not directly collect</h2>
+    <p>DUMA does not directly collect your full name, email address, phone number, postal address, precise location, contacts, photos, microphone input, camera data, passwords, or login credentials.</p>
 
-    <h2>7. Data retention</h2>
-    <p>Data stored locally by DUMA remains on your device until you clear the app storage, uninstall the app, or reinstall the app without restoring local data, if applicable. We do not retain your gameplay progress on our own servers.</p>
+    <h2>7. Purpose of processing</h2>
+    <p>We use local data only to operate the game, preserve progress, manage language, hints, and purchases. Data processed by Google, Firebase, AdMob, or Google Play is handled under their own policies for analytics, advertising, purchase delivery, security, fraud prevention, diagnostics, and service improvement.</p>
 
-    <h2>8. Security</h2>
-    <p>We aim to limit data use to what is necessary for the app to function. However, no method of storage or transmission can be guaranteed to be completely secure.</p>
+    <h2>8. Data retention</h2>
+    <p>Data stored locally by DUMA remains on your device until you clear the app storage, uninstall the app, or reinstall the app without restoring local data, if applicable. We do not retain your gameplay progress on our own servers because DUMA does not currently use its own account system or cloud sync backend.</p>
+    <p>Data processed by Google, Firebase, AdMob, or Google Play is retained according to their own policies and retention periods.</p>
 
-    <h2>9. Your rights</h2>
+    <h2>9. Security</h2>
+    <p>We aim to limit data use to what is necessary for the app to function. Data transmitted to Google/Firebase services is protected in transit according to those services' mechanisms. However, no method of storage or transmission can be guaranteed to be completely secure.</p>
+
+    <h2>10. Your choices and rights</h2>
     <p>Depending on your country or region, you may have rights regarding access, deletion, objection, or restriction of certain data processing activities. Most data directly controlled by you can be removed locally by clearing app data or uninstalling the app.</p>
+    <p>You can manage ad privacy choices in the app where those choices are available, and through your Google or device settings. For data processed by Google, Firebase, AdMob, or Google Play, please review their own privacy policies and user controls.</p>
 
-    <h2>10. Children</h2>
+    <h2>11. Children</h2>
     <p>DUMA is not specifically directed to children under 13.</p>
 
-    <h2>11. International data transfers</h2>
-    <p>If advertising or other third-party services are used, data may be processed on servers located outside your country of residence, including in jurisdictions where those providers operate.</p>
+    <h2>12. International data transfers</h2>
+    <p>Data processed by third-party services such as Google, Firebase, AdMob, or Google Play may be processed on servers located outside your country of residence, including in jurisdictions where those providers operate.</p>
 
-    <h2>12. Changes to this policy</h2>
+    <h2>13. Changes to this policy</h2>
     <p>We may update this Privacy Policy from time to time to reflect legal, technical, or product changes. Any updated version will include a new effective date.</p>
 
-    <h2>13. Contact</h2>
+    <h2>14. Contact</h2>
     <p>If you have questions about this Privacy Policy or about data processing in DUMA, contact us at <a href="mailto:lvisoiu300@gmail.com">lvisoiu300@gmail.com</a>.</p>
 
-    <section class="lang">
+    <section class="lang" lang="ro">
       <h2>Politica de Confidentialitate pentru DUMA</h2>
-      <p>Data intrarii in vigoare: 11 aprilie 2026</p>
-      <p>DUMA respecta confidentialitatea utilizatorilor sai. Aplicatia stocheaza local progresul, nivelurile deblocate, cuvintele gasite, limba preferata si utilizarea indiciilor gratuite. DUMA nu cere cont pentru joc si nu foloseste propriul backend pentru sincronizarea progresului.</p>
-      <p>Aplicatia poate afisa reclame prin Google AdMob, iar Google si partenerii sai pot prelucra date tehnice sau de utilizare pentru livrarea reclamelor, prevenirea fraudei, masurare si diagnostic. Pentru intrebari legate de confidentialitate, contacteaza-ne la <a href="mailto:lvisoiu300@gmail.com">lvisoiu300@gmail.com</a>.</p>
+      <p>Data intrarii in vigoare: 7 mai 2026</p>
+      <p>DUMA este un joc de cuvinte pentru mobil. Aplicatia nu cere cont si nu solicita nume, email, telefon sau alte date de identificare directa pentru a juca.</p>
+      <p>DUMA stocheaza local progresul, nivelurile deblocate, cuvintele gasite, limba preferata, indicii gratuite folosite, soldul de litere sau indicii bonus si starea achizitiei pentru eliminarea reclamelor, daca exista. Nu folosim un backend propriu pentru conturi sau sincronizarea progresului.</p>
+      <p>Aplicatia poate folosi Google AdMob pentru reclame, Google Play Billing pentru achizitii optionale si Firebase Analytics, Crashlytics si Remote Config pentru analiza agregata, stabilitate si configurare la distanta. Aceste servicii pot procesa date tehnice precum identificatori ai aplicatiei sau dispozitivului, evenimente de utilizare, informatii de diagnostic, crash logs, starea achizitiilor, tara, limba, fus orar, versiunea aplicatiei si sistemul de operare.</p>
+      <p>Nu colectam direct nume, email, telefon, adresa postala, locatie precisa, contacte, fotografii, microfon, camera, parole sau date de autentificare. Pentru intrebari legate de confidentialitate, contacteaza-ne la <a href="mailto:lvisoiu300@gmail.com">lvisoiu300@gmail.com</a>.</p>
     </section>
   </main>
 </body>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Subtrack — Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #0F0F0F;
+      --surface: #161616;
+      --border: #252525;
+      --text: #FFFFFF;
+      --muted: #8E8E93;
+      --primary: #FF6B35;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
+                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                 line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 96px; }
+    header { margin-bottom: 40px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+    h1 { font-size: 32px; margin: 0 0 8px; letter-spacing: -0.5px; }
+    h2 { font-size: 20px; margin: 36px 0 12px; color: var(--primary); letter-spacing: -0.3px; }
+    h3 { font-size: 16px; margin: 24px 0 8px; color: var(--text); }
+    p, li { color: #D8D8DA; font-size: 15px; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code { background: var(--surface); padding: 2px 6px; border-radius: 4px; color: var(--primary); font-size: 13px; }
+    .tag { color: var(--muted); font-size: 13px; margin-top: 6px; }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 6px; }
+    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+    .pill { display: inline-block; padding: 4px 10px; border-radius: 12px;
+            background: var(--surface); color: var(--primary); font-size: 12px;
+            font-weight: 600; letter-spacing: 0.5px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="pill">SUBTRACK</span>
+      <h1>Privacy Policy</h1>
+      <p class="tag">Last updated: 5 June 2026</p>
+    </header>
+
+    <p>
+      This Privacy Policy explains what information the <strong>Subtrack</strong>
+      mobile application ("Subtrack", "we", "our") collects when you use it, how
+      we use it, and what choices you have. We designed Subtrack to keep your
+      data on your device by default. We do not sell or rent your personal
+      information to anyone.
+    </p>
+
+    <h2>1. Who we are</h2>
+    <p>
+      Subtrack is an independent mobile application that helps you track your
+      personal subscriptions. The developer is the data controller for the
+      purposes of GDPR. You can reach us at
+      <a href="mailto:lvisoiu300@gmail.com">lvisoiu300@gmail.com</a>.
+    </p>
+
+    <h2>2. Information we collect</h2>
+
+    <h3>Information stored locally on your device (always)</h3>
+    <ul>
+      <li><strong>Your subscriptions</strong> — name, price, currency, billing cycle, renewal day, and category, all entered manually by you.</li>
+      <li><strong>Your display name</strong> — the name you pick on the welcome screen.</li>
+      <li><strong>App preferences</strong> — language, currency, notification settings, theme.</li>
+      <li><strong>Detected services</strong> — when you use <em>Detect from apps</em>, the application checks whether a fixed whitelist of ~60 known subscription apps (Netflix, Spotify, ChatGPT, etc.) is installed on your device. We never read which other apps you have installed, and the detection result stays on your device. It is not sent to any server.</li>
+    </ul>
+
+    <h3>Information sent to Firebase (only if you sign in)</h3>
+    <ul>
+      <li><strong>Google account email and unique user ID</strong> — provided by Google Sign-In so we can keep your subscriptions in sync across devices.</li>
+      <li><strong>Encrypted copy of your subscriptions</strong> — name, price, currency, billing cycle, renewal day, category — stored in your private Firestore collection at <code>users/{your-uid}/subscriptions</code>.</li>
+    </ul>
+
+    <h3>Information sent when you submit Feedback</h3>
+    <ul>
+      <li><strong>Your message and 1–5 star rating.</strong></li>
+      <li><strong>Optional metadata</strong> we attach for context: your display name, current app language, current plan id, app version, "android". If you are signed in, your Firebase user id is attached so we can follow up if needed.</li>
+    </ul>
+
+    <h3>Information we do <em>not</em> collect</h3>
+    <ul>
+      <li>We do not collect your contacts, photos, files, location, microphone, camera, browsing history, or advertising identifiers.</li>
+      <li>We do not collect a full list of apps installed on your device. <code>QUERY_ALL_PACKAGES</code> permission is <strong>not</strong> requested.</li>
+      <li>We do not use third-party advertising or analytics SDKs.</li>
+    </ul>
+
+    <h2>3. How we use the information</h2>
+    <ul>
+      <li>To display your subscriptions and totals inside the application.</li>
+      <li>To schedule local notifications that remind you about upcoming renewals.</li>
+      <li>To synchronise your subscriptions across the devices where you sign in with the same Google account.</li>
+      <li>To read and act on Feedback you choose to send us.</li>
+    </ul>
+
+    <h2>4. Legal basis for processing (GDPR)</h2>
+    <ul>
+      <li><strong>Contract (Art. 6.1.b)</strong> — for the cloud sync feature you actively sign in to use.</li>
+      <li><strong>Consent (Art. 6.1.a)</strong> — for Feedback messages you choose to submit.</li>
+      <li><strong>Legitimate interest (Art. 6.1.f)</strong> — for keeping app preferences and locally-stored subscriptions working as expected.</li>
+    </ul>
+
+    <h2>5. Who we share information with</h2>
+    <ul>
+      <li><strong>Google Firebase</strong> (Authentication + Cloud Firestore) — acts as our data processor when you sign in and use cloud sync. Data is stored in Google's European or US data centres depending on the Firebase project region. See <a href="https://firebase.google.com/support/privacy">Firebase Privacy</a>.</li>
+      <li><strong>Google Play Billing</strong> — when you purchase a Subtrack premium plan, the transaction is processed by Google. We never see your card details. See <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
+      <li>We do not share your information with any other third party.</li>
+    </ul>
+
+    <h2>6. Data retention</h2>
+    <ul>
+      <li>Locally-stored data is retained on your device until you delete the app or sign out (sign-out wipes your local subscriptions and display name).</li>
+      <li>Cloud-stored data is retained while your Subtrack account exists. You can request deletion at any time by emailing us.</li>
+      <li>Feedback messages are kept up to 24 months for product improvement, then deleted.</li>
+    </ul>
+
+    <h2>7. Your rights</h2>
+    <ul>
+      <li><strong>Access</strong> — every subscription, preference, and the display name you provided are visible inside the application at any time.</li>
+      <li><strong>Portability</strong> — Settings → <em>Export CSV</em> exports your subscriptions as a CSV file.</li>
+      <li><strong>Erasure</strong> — Sign out from Settings to wipe local data. To delete the cloud copy linked to your Google account, email us at <a href="mailto:lvisoiu300@gmail.com">lvisoiu300@gmail.com</a> and we will erase it within 30 days.</li>
+      <li><strong>Rectification, restriction, objection</strong> — contact us at the email above.</li>
+      <li><strong>Complaint</strong> — if you believe we have mishandled your data you can lodge a complaint with your national data protection authority. In Romania this is <a href="https://www.dataprotection.ro/">ANSPDCP</a>.</li>
+    </ul>
+
+    <h2>8. Children</h2>
+    <p>
+      Subtrack is not directed to children under 13. We do not knowingly collect
+      data from anyone under 13. If you believe a child has provided us with
+      personal information, please contact us so we can delete it.
+    </p>
+
+    <h2>9. Security</h2>
+    <p>
+      Local data is stored using Hive, a binary format that lives in your
+      app's private storage and is sandboxed by Android. Cloud data is protected
+      by Firestore security rules that only allow you to read and write your own
+      <code>users/{your-uid}/subscriptions</code> subtree. We use HTTPS for every
+      network call.
+    </p>
+
+    <h2>10. International transfers</h2>
+    <p>
+      When you use cloud sync, Firebase may transfer your data to Google data
+      centres outside your country. These transfers are covered by Google's
+      Standard Contractual Clauses where applicable.
+    </p>
+
+    <h2>11. Changes to this policy</h2>
+    <p>
+      If we make material changes we will update the "Last updated" date at the
+      top and, where reasonable, notify you in the app. Continued use of the
+      application after changes take effect means you accept the updated
+      policy.
+    </p>
+
+    <h2>12. Contact</h2>
+    <p>
+      Questions, deletion requests, or other privacy concerns:
+      <a href="mailto:lvisoiu300@gmail.com">lvisoiu300@gmail.com</a>.
+    </p>
+
+    <footer>
+      © 2026 Subtrack. All rights reserved. ·
+      <a href="terms.html">Terms of Service</a>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Subtrack — Track all your subscriptions in one place</title>
+  <meta name="description" content="Subtrack helps you keep every subscription in one place, get renewal reminders, and stop paying for things you forgot.">
+  <style>
+    :root {
+      --bg: #0F0F0F;
+      --surface: #161616;
+      --surface-high: #1A1A1A;
+      --border: #252525;
+      --text: #FFFFFF;
+      --text-secondary: #D8D8DA;
+      --muted: #8E8E93;
+      --primary: #FF6B35;
+      --secondary: #FF9F1C;
+      --success: #30D158;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
+                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                 line-height: 1.55; -webkit-font-smoothing: antialiased; }
+
+    /* Hero */
+    .hero { position: relative; padding: 96px 24px 80px; text-align: center; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,107,53,0.18) 0%, rgba(255,107,53,0) 60%);
+      z-index: 0; pointer-events: none;
+    }
+    .hero > * { position: relative; z-index: 1; }
+
+    .badge {
+      display: inline-block; padding: 6px 14px; border-radius: 18px;
+      background: rgba(255,107,53,0.14); color: var(--primary);
+      font-size: 12px; font-weight: 600; letter-spacing: 0.6px;
+      margin-bottom: 24px; border: 1px solid rgba(255,107,53,0.3);
+    }
+    h1 {
+      font-size: clamp(36px, 7vw, 64px); margin: 0 0 18px;
+      letter-spacing: -1.5px; line-height: 1.05; font-weight: 800;
+    }
+    .tagline {
+      font-size: clamp(16px, 2.3vw, 20px); color: var(--text-secondary);
+      max-width: 620px; margin: 0 auto 40px; line-height: 1.5;
+    }
+
+    .cta-row {
+      display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+      margin-bottom: 56px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 28px; border-radius: 14px; font-weight: 600;
+      text-decoration: none; font-size: 15px; transition: transform 0.15s, opacity 0.15s;
+    }
+    .btn:hover { transform: translateY(-1px); opacity: 0.92; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; }
+    .btn-secondary { background: var(--surface); color: white; border: 1px solid var(--border); }
+
+    .logo-mark {
+      width: 120px; height: 120px; margin: 0 auto 32px;
+      border-radius: 28px; background: var(--surface);
+      box-shadow: 0 20px 60px -10px rgba(255,107,53,0.4),
+                  inset 0 1px 0 rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .logo-mark::after {
+      content: "S"; font-size: 64px; font-weight: 800; color: var(--primary);
+      letter-spacing: -2px; line-height: 1;
+    }
+
+    /* Features */
+    .features { padding: 64px 24px; max-width: 1080px; margin: 0 auto; }
+    .features-grid {
+      display: grid; gap: 16px; margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .feature {
+      padding: 28px 24px; background: var(--surface);
+      border-radius: 20px; border: 1px solid var(--border);
+    }
+    .feature-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(255,107,53,0.16); color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 16px;
+    }
+    .feature h3 { margin: 0 0 8px; font-size: 17px; letter-spacing: -0.3px; }
+    .feature p { margin: 0; color: var(--text-secondary); font-size: 14px; }
+
+    h2 {
+      font-size: clamp(26px, 4vw, 36px); letter-spacing: -1px;
+      margin: 0 0 12px; text-align: center; font-weight: 800;
+    }
+    .section-sub {
+      text-align: center; color: var(--muted); font-size: 15px;
+      max-width: 560px; margin: 0 auto;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 80px; padding: 40px 24px; border-top: 1px solid var(--border);
+      text-align: center; color: var(--muted); font-size: 13px;
+    }
+    footer a { color: var(--primary); text-decoration: none; margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
+    .footer-tag { margin-top: 8px; font-size: 12px; opacity: 0.7; }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="logo-mark"></div>
+    <span class="badge">SUBSCRIPTION TRACKER</span>
+    <h1>All your subscriptions.<br>One place.</h1>
+    <p class="tagline">
+      Stop guessing where your money goes every month. Subtrack keeps Netflix,
+      Spotify, ChatGPT and every other recurring charge organised — with
+      reminders before each renewal so nothing renews behind your back.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://play.google.com/store">
+        Get it on Google Play →
+      </a>
+      <a class="btn btn-secondary" href="privacy.html">Privacy Policy</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>What you get</h2>
+    <p class="section-sub">Built for people who hate surprise charges and forgotten free trials.</p>
+
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <h3>Everything in one dashboard</h3>
+        <p>See your monthly and annual totals at a glance, broken down by category and renewal date.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔔</div>
+        <h3>Smart renewal reminders</h3>
+        <p>Get pinged 3 days, 1 day and on the day of renewal — well before the charge lands.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3>Auto-detect from installed apps</h3>
+        <p>Tap Detect and we'll suggest subscriptions based on apps already on your phone — Netflix, Spotify, ChatGPT and ~60 more.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">☁️</div>
+        <h3>Cloud sync, only if you want it</h3>
+        <p>Use it offline as a guest, or sign in with Google to sync across devices. Your data stays yours.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📈</div>
+        <h3>See trends over time</h3>
+        <p>Watch your monthly spend grow or shrink across categories, so you spot the creep before it gets out of hand.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🌍</div>
+        <h3>9 languages, 11 currencies</h3>
+        <p>Auto-picks your language and currency from your phone settings. EUR, RON, GBP, PLN, USD, CHF and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <a href="privacy.html">Privacy Policy</a> ·
+      <a href="terms.html">Terms of Service</a> ·
+      <a href="delete-account.html">Delete your data</a> ·
+      <a href="mailto:lvisoiu300@gmail.com">Contact</a>
+    </div>
+    <div class="footer-tag">© 2026 Subtrack. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>

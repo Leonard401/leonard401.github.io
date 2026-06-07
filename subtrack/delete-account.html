@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Subtrack — Delete your account & data</title>
+  <style>
+    :root {
+      --bg: #0F0F0F;
+      --surface: #161616;
+      --border: #252525;
+      --text: #FFFFFF;
+      --muted: #8E8E93;
+      --primary: #FF6B35;
+      --danger: #FF453A;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
+                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                 line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+    header { margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    h1 { font-size: 30px; margin: 0 0 8px; letter-spacing: -0.5px; }
+    h2 { font-size: 18px; margin: 32px 0 10px; color: var(--primary); letter-spacing: -0.3px; }
+    p, li { color: #D8D8DA; font-size: 15px; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code { background: var(--surface); padding: 2px 6px; border-radius: 4px; color: var(--primary); font-size: 13px; }
+    .tag { color: var(--muted); font-size: 13px; margin-top: 6px; }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 6px; }
+    .card { background: var(--surface); border: 1px solid var(--border);
+            padding: 18px 22px; border-radius: 16px; margin: 20px 0; }
+    .card.warn { border-color: rgba(255,69,58,0.4); background: rgba(255,69,58,0.05); }
+    .btn { display: inline-block; padding: 12px 22px; background: var(--primary);
+           color: white; border-radius: 12px; font-weight: 600;
+           text-decoration: none; margin-top: 8px; }
+    .btn:hover { text-decoration: none; opacity: 0.92; }
+    .pill { display: inline-block; padding: 4px 10px; border-radius: 12px;
+            background: var(--surface); color: var(--primary); font-size: 12px;
+            font-weight: 600; letter-spacing: 0.5px; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="pill">SUBTRACK</span>
+      <h1>Delete your account & data</h1>
+      <p class="tag">Last updated: 7 June 2026</p>
+    </header>
+
+    <p>
+      Subtrack respects your right to remove your data at any time. This page
+      explains exactly what gets deleted, how to request it, and how long it
+      takes.
+    </p>
+
+    <h2>1. What you can delete yourself, right now</h2>
+    <div class="card">
+      <p>
+        Open Subtrack → <strong>Settings</strong> → <strong>Sign out</strong>.
+        This immediately wipes the following from your device:
+      </p>
+      <ul>
+        <li>Every subscription you added</li>
+        <li>Your display name</li>
+        <li>Your selected plan</li>
+        <li>The last cloud-sync timestamp</li>
+      </ul>
+      <p>
+        If you only used the app as a guest (no Google sign-in), nothing
+        else exists — this is a full erasure.
+      </p>
+    </div>
+
+    <h2>2. If you signed in with Google, request a cloud deletion</h2>
+    <p>
+      When you signed in with Google, a copy of your subscriptions was
+      saved to our private Firestore database under
+      <code>users/{your-uid}/subscriptions</code>. The "Sign out" step above
+      does <strong>not</strong> remove that cloud copy.
+    </p>
+
+    <div class="card warn">
+      <p style="margin-top:0">
+        <strong>Email us</strong> to delete the cloud copy and any feedback
+        you submitted. We'll erase everything tied to your account within
+        <strong>30 days</strong>.
+      </p>
+      <p style="margin:0">
+        Send the request to
+        <a href="mailto:lvisoiu300@gmail.com?subject=Subtrack%20delete%20account&body=Please%20delete%20my%20Subtrack%20account%20and%20all%20associated%20data.%20I%20signed%20in%20using%20the%20following%20Google%20email%3A%20">lvisoiu300@gmail.com</a>
+        with the subject <em>"Subtrack delete account"</em> from the same
+        Google account you used to sign in to the app.
+      </p>
+      <a class="btn"
+         href="mailto:lvisoiu300@gmail.com?subject=Subtrack%20delete%20account&body=Please%20delete%20my%20Subtrack%20account%20and%20all%20associated%20data.%20I%20signed%20in%20using%20the%20following%20Google%20email%3A%20">
+        Request deletion by email
+      </a>
+    </div>
+
+    <h2>3. What gets erased</h2>
+    <ul>
+      <li><strong>Firestore</strong> — your <code>users/{uid}</code> document and the entire <code>subscriptions</code> sub-collection.</li>
+      <li><strong>Firebase Authentication</strong> — your Google-linked auth record is removed, so signing in again creates a fresh account.</li>
+      <li><strong>Feedback collection</strong> — feedback messages tied to your user id are deleted as well. (Anonymous feedback with no user id stays in the analytics pool, since it can no longer be linked back to you.)</li>
+      <li><strong>Local data on your devices</strong> — the next sign-in on a fresh install will not download anything; if you still have the app installed and signed in, use "Sign out" inside the app to wipe the device copy.</li>
+    </ul>
+
+    <h2>4. What we keep (and why)</h2>
+    <ul>
+      <li>Aggregated analytics events (no user id attached) — used to track usage trends.</li>
+      <li>Crash reports — anonymised stack traces with no personal identifiers.</li>
+      <li>Anything you may have purchased through Google Play Billing — receipts are managed by Google, not by us. You can review and refund purchases through your Google Play account.</li>
+    </ul>
+
+    <h2>5. Response time</h2>
+    <p>
+      We reply within <strong>72 hours</strong> to confirm we received your
+      request, and complete the deletion within <strong>30 days</strong> as
+      required under GDPR Article 17.
+    </p>
+
+    <h2>6. Need help?</h2>
+    <p>
+      For any privacy-related question:
+      <a href="mailto:lvisoiu300@gmail.com">lvisoiu300@gmail.com</a>.
+    </p>
+
+    <footer>
+      © 2026 Subtrack. ·
+      <a href="privacy.html">Privacy Policy</a> ·
+      <a href="terms.html">Terms of Service</a>
+    </footer>
+  </div>
+</body>
+</html>
